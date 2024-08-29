@@ -1,0 +1,194 @@
+
+<script>
+import Link from "next/link"
+import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
+</script>
+export default function Component() {
+
+  return (
+
+    <div className="flex flex-col min-h-[100dvh] bg-background text-foreground">
+      <header className="px-4 lg:px-6 h-14 flex items-center border-b">
+        <Link href="#" className="flex items-center justify-center" prefetch={false}>
+          <LaptopIcon className="h-6 w-6" />
+          <span className="sr-only">Faisal's Portfolio</span>
+        </Link>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+            About
+          </Link>
+          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+            Projects
+          </Link>
+          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+            Contact
+          </Link>
+        </nav>
+      </header>
+      <main className="flex-1">
+        <section id="about" className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Hi, I'm Faisal!</h1>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                  I'm an 18-year-old programmer who loves building cool stuff. Check out my projects and let's connect!
+                </p>
+              </div>
+              <img
+                src="/placeholder.svg"
+                width="400"
+                height="400"
+                alt="Faisal"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full"
+              />
+            </div>
+          </div>
+        </section>
+        <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <div className="container space-y-12 px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">My Programming Projects</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Check out some of the cool projects I've built using my programming skills.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+              <Card className="bg-background shadow-lg">
+                <CardHeader className="flex flex-row items-center p-4">
+                  <div className="flex items-center gap-2 text-sm font-semibold">
+                    <CodeIcon className="h-6 w-6" />
+                    Web Scraper
+                  </div>
+                </CardHeader>
+                <CardContent className="p-4">
+                  <p className="text-muted-foreground">
+                    A web scraper built with Python that extracts data from websites and saves it to a CSV file.
+                  </p>
+                </CardContent>
+                <CardFooter className="flex justify-end p-4">
+                  <Link
+                    href="#"
+                    className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    prefetch={false}
+                  >
+                    View Project
+                  </Link>
+                </CardFooter>
+              </Card>
+              <Card className="bg-background shadow-lg">
+                <CardHeader className="flex flex-row items-center p-4">
+                  <div className="flex items-center gap-2 text-sm font-semibold">
+                    <CodeIcon className="h-6 w-6" />
+                    Discord Bot
+                  </div>
+                </CardHeader>
+                <CardContent className="p-4">
+                  <p className="text-muted-foreground">
+                    A Discord bot built with Node.js that can perform various moderation and utility tasks.
+                  </p>
+                </CardContent>
+                <CardFooter className="flex justify-end p-4">
+                  <Link
+                    href="#"
+                    className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    prefetch={false}
+                  >
+                    View Project
+                  </Link>
+                </CardFooter>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container grid items-center justify-center gap-4 px-4 md:px-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Get in Touch</h2>
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Have a project in mind or just want to say hi? Fill out the form below and I'll get back to you as soon
+                as I can.
+              </p>
+            </div>
+            <div className="mx-auto w-full max-w-sm space-y-2">
+              <form className="grid gap-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" placeholder="Your name" required />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="example@email.com" required />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" placeholder="Your message" rows={5} required />
+                </div>
+                <Button type="submit" className="w-full">
+                  Send Message
+                </Button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p className="text-xs text-muted-foreground">&copy; 2024 Faisal. All rights reserved.</p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+            Privacy
+          </Link>
+          <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+            Terms of Service
+          </Link>
+        </nav>
+      </footer>
+    </div>
+  )
+}
+
+function CodeIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
+    </svg>
+  )
+}
+
+
+function LaptopIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
+    </svg>
+  )
+}
